@@ -1,9 +1,17 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/route/app_router.dart';
 import 'package:flutter_portfolio/widgets/project_list_item.dart';
 
-class HomePage extends StatelessWidget {
+@RoutePage()
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,12 +32,21 @@ class HomePage extends StatelessWidget {
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
                 const SizedBox(height: 15.0),
-                ProjectListItem(title: "NIAT | A simple ToDo app", onTap: (){},),
+                ProjectListItem(
+                  title: "NIAT | A simple ToDo app",
+                  onTap: () {
+                    _navigateToNiatApp();
+                  },
+                ),
               ],
             ),
           ),
         ),
       ),
     );
+  }
+
+  void _navigateToNiatApp() {
+    context.router.push(const NiatHomeRoute());
   }
 }

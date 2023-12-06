@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/pages/home_page.dart';
+import 'package:flutter_portfolio/route/app_router.dart';
 import 'package:flutter_portfolio/themes/color_theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
-  // This widget is the root of your application.
+  final appRouter = AppRouter();
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Flutter Demo',
       theme: lightMode,
-      home: const HomePage(),
+      routerConfig: appRouter.config(),
     );
   }
 }
