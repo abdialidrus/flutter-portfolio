@@ -7,6 +7,11 @@ TextTheme textTheme = TextTheme(
     fontStyle: FontStyle.normal,
     fontWeight: FontWeight.w600,
   ),
+  titleMedium: GoogleFonts.roboto(
+    fontSize: 24,
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.w400,
+  ),
   bodyMedium: GoogleFonts.roboto(),
   displayLarge: GoogleFonts.roboto(),
   displaySmall: GoogleFonts.roboto(),

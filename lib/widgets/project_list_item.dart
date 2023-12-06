@@ -16,7 +16,9 @@ class ProjectListItem extends StatelessWidget {
           elevation: 3.0,
           shadowColor: Theme.of(context).colorScheme.primary,
           child: GestureDetector(
-            onTap: onTap(),
+            onTap: () {
+              onTap();
+            },
             child: Padding(
               padding: const EdgeInsets.symmetric(
                 vertical: 15.0,
